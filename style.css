@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 10vh;
+  background-color: rgb(231, 231, 231);
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 5px 0px #545454;
+}
+.logo {
+  font-size: 3rem;
+  font-family: sans-serif;
+}
+header i {
+  font-size: 2.5rem;
+}
+
+.cards {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  margin: 2rem auto;
+  width: 15rem;
+  border: solid 1px grey;
+  border-radius: 10px;
+  box-shadow: 0 0 5px -2px #0e0e0e;
+  transition: 0.5s ease;
+  background-color: white;
+}
+.card .vid {
+  width: 100%;
+  padding: 5px;
+}
+.card .text {
+  padding: 0 5px;
+}
+.card .text h2 {
+  font-size: 1.7rem;
+  font-family: sans-serif;
+}
+.card .text p {
+  color: #444;
+  padding-left: 5px;
+}
+.card .buttons {
+  width: 100%;
+  margin: 2rem auto 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons span {
+  background-color: #858383;
+  padding: 5px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.buttons span:hover {
+  background-color: #6d6e6c;
+  z-index: 2;
+}
+
+.later.on {
+  animation: watchLater 0.7s ease-in;
+}
+@keyframes watchLater {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #6d6e6c;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #858383;
+  }
+}
+
+/* fullscreen */
+.hiddenvid {
+  display: none;
+}
+.hiddenvid.fullscreen {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.page.fullscreen {
+  filter: blur(5px);
+}
+.back::before {
+  display: none;
+}
+.back {
+  display: none;
+  color: red;
+  font-size: 40px;
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 6;
+}
+.back:hover {
+  cursor: pointer;
+}
+@media (min-width: 587px) {
+  .card:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+@media (max-width: 585px) {
+  .cards .card:first-child {
+    margin-top: 5rem;
+  }
+  .card {
+    margin: 0 auto 3rem;
+    width: 90%;
+  }
+  .card span {
+    font-size: 1.2rem;
+  }
+  /* !-------------------- */
+  .hiddenvid.fullscreen {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vw;
+    transform: translate(-27%, 59%) rotate(90deg);
+    z-index: 5;
+  }
+  .back.fullscreen::before {
+    display: block;
+    z-index: 6;
+  }
+}
+
+footer {
+  min-height: 10vh;
+  background-color: rgb(179, 179, 179);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  font-family: sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 -1px 3px 0px #101010;
+}
+footer h2 {
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 20rem;
+}
+footer h3 {
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 20rem;
+}
+
+/* 
+const card = document.querySelector(".card")
+const video = document.querySelector(".vid")
+const laterbtn = document.querySelector(".later")
+const latericon = document.querySelector(".later i")
+const playbtn = document.querySelector(".play")
+const page = document.querySelector(".page")
+const hiddenvid = document.querySelector(".hiddenvid")
+
+
+
+card.addEventListener('mouseover',()=>{
+    // setTimeout(() => {
+    //     video.play()
+    // }, 1000);
+    video.play()
+})
+card.addEventListener('mouseleave',()=>{
+    video.pause()
+    video.currentTime = 0
+})
+
+laterbtn.addEventListener('click',()=>{
+    latericon.classList.remove("fa-clock")
+    latericon.classList.add("fa-check")
+    laterbtn.classList.toggle("on")
+})
+playbtn.addEventListener('click',()=>{
+    page.classList.toggle('fullscreen')
+    hiddenvid.classList.toggle('fullscreen')
+})
+document.addEventListener('keypress',(event)=>{
+    if(event.key == 'f'){
+        page.classList.remove('fullscreen')
+        hiddenvid.classList.remove('fullscreen')
+        hiddenvid.currentTime = 0
+        video.currentTime = 0
+        video.pause()
+    }
+}) */
