@@ -61,7 +61,7 @@ header i {
 }
 
 .buttons span {
-  background-color: #858383;
+  background-color: #afabab;
   padding: 5px 15px;
   font-size: 1rem;
   border-radius: 5px;
@@ -156,6 +156,9 @@ header i {
     display: block;
     z-index: 6;
   }
+  .buttons span {
+    padding: 10px 15px;
+  }
 }
 
 footer {
@@ -179,44 +182,3 @@ footer h3 {
   flex-grow: 1;
   flex-basis: 20rem;
 }
-
-/* 
-const card = document.querySelector(".card")
-const video = document.querySelector(".vid")
-const laterbtn = document.querySelector(".later")
-const latericon = document.querySelector(".later i")
-const playbtn = document.querySelector(".play")
-const page = document.querySelector(".page")
-const hiddenvid = document.querySelector(".hiddenvid")
-
-
-
-card.addEventListener('mouseover',()=>{
-    // setTimeout(() => {
-    //     video.play()
-    // }, 1000);
-    video.play()
-})
-card.addEventListener('mouseleave',()=>{
-    video.pause()
-    video.currentTime = 0
-})
-
-laterbtn.addEventListener('click',()=>{
-    latericon.classList.remove("fa-clock")
-    latericon.classList.add("fa-check")
-    laterbtn.classList.toggle("on")
-})
-playbtn.addEventListener('click',()=>{
-    page.classList.toggle('fullscreen')
-    hiddenvid.classList.toggle('fullscreen')
-})
-document.addEventListener('keypress',(event)=>{
-    if(event.key == 'f'){
-        page.classList.remove('fullscreen')
-        hiddenvid.classList.remove('fullscreen')
-        hiddenvid.currentTime = 0
-        video.currentTime = 0
-        video.pause()
-    }
-}) */
