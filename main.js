@@ -26,11 +26,7 @@ for(let i=0;i<exitshare.length;i++){
 
 for(let i=0;i<card.length;i++){
     card[i].addEventListener('mouseover',()=>{
-        // setTimeout(() => {
-        //     video.play()
-        // }, 1000);
         if(!card[i].classList.contains("launch")) video[i].play()
-
     })
 }
 for(let i=0;i<card.length;i++){
@@ -80,7 +76,7 @@ for(let i=0;i<exitvideo.length;i++){
     exitvideo[i].addEventListener('click',(event)=>{
         event.stopImmediatePropagation()
     card[i].classList.remove('launch')
-    cancleHover() 
+    cancelHover() 
     video[i].pause()
     video[i].currentTime = 0
     exitvideo[i].style.display = 'none'
@@ -88,11 +84,10 @@ for(let i=0;i<exitvideo.length;i++){
     video[i].muted = "muted"
     video[i].controls = ""
     verifyHover()
-    thumbnail()
     })
 }
 
-function cancleHover(){
+function cancelHover(){
     for(let j=0;j<card.length;j++){
         if(!card[j].classList.contains("nohover")) card[j].classList.remove("nohover")
     }
@@ -105,9 +100,4 @@ function verifyHover(){
     if(verif) for(let i=0;i<card.length;i++) card[i].classList.remove("nohover")
 }
 
-function thumbnail(){
-    for (let index = 0; index < card.length; index++) {
-        video[i].poster = "./images/img1.jpg"
-    }
-}
 

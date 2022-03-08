@@ -14,8 +14,9 @@ header {
   box-shadow: 0 1px 5px 0px #545454;
 }
 .logo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: sans-serif;
+  transition: 0.2s ease;
 }
 header i {
   font-size: 2.5rem;
@@ -23,7 +24,7 @@ header i {
 
 .cards {
   width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -56,12 +57,15 @@ header i {
   padding: 0 5px;
 }
 .card .text h2 {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-family: sans-serif;
+  margin-bottom: 0.5rem;
 }
 .card .text p {
-  color: #444;
-  padding-left: 5px;
+  color: #666;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  padding-left: 3px;
 }
 .card .buttons {
   width: 100%;
@@ -73,7 +77,7 @@ header i {
   width: 80%;
   display: block;
   margin: 0.5rem auto;
-  background-color: #afabab;
+  background-color: #cfcfcf;
   padding: 5px 15px;
   font-size: 1rem;
   border-radius: 5px;
@@ -82,7 +86,7 @@ header i {
 }
 
 .buttons span:hover {
-  background-color: #6d6e6c;
+  background-color: #adadad;
   z-index: 1;
 }
 
@@ -95,17 +99,15 @@ header i {
   }
   50% {
     transform: scale(1.05);
-    background-color: #6d6e6c;
   }
   100% {
     transform: scale(1);
-    background-color: #858383;
   }
 }
 
 footer {
   min-height: 10vh;
-  background-image: linear-gradient(to bottom, #3a3a3a, #e3e3e3);
+  background-image: linear-gradient(to bottom, #706e6e, #e3e3e3);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -127,7 +129,7 @@ footer h3 {
 
 .share {
   display: none;
-  z-index: 6;
+  z-index: 2;
   position: fixed;
   top: 20%;
   left: 20%;
@@ -169,6 +171,7 @@ footer h3 {
 }
 .share .sharebtn {
   background-color: #077bff;
+  font-size: 1.2rem;
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   padding: 5px 10px;
@@ -185,7 +188,7 @@ footer h3 {
 }
 .share.show {
   display: block;
-  animation: popup 0.3s ease-in;
+  animation: popup 0.15s ease-in;
 }
 @keyframes popup {
   from {
@@ -198,17 +201,13 @@ footer h3 {
   }
 }
 
-.card.launch {
-  width: 50%;
-}
-
 .card.nohover:hover {
   transform: scale(1);
 }
 /* !media queries --------------------------------*/
 @media (min-width: 587px) {
   .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
   }
   .card.launch {
@@ -216,41 +215,45 @@ footer h3 {
   }
 }
 @media (max-width: 880px) {
+  .logo {
+    font-size: 2rem;
+  }
   .card.launch {
     width: 80%;
   }
 }
 @media (max-width: 585px) {
-  /* html {
-    font-size: 80%;
-  } */
-  .card:first-child {
-    margin-top: 5rem;
-  }
   .card {
     margin: 0 auto 1.5rem;
-    width: 90%;
+    width: 85%;
   }
   .card span {
     font-size: 1.2rem;
   }
-  /* .card.open {
-    position: fixed;
-    top: 0;
-    margin-top: 10vh;
-    width: 100%;
-  } */
+
+  .card .vid {
+    padding: 0;
+  }
   .share {
     width: 85%;
     top: 20%;
     left: calc(15% / 2);
+    min-height: 35vh;
   }
-  /* !-------------------- */
+  .fb,
+  .insta,
+  .twitter {
+    margin-top: 2rem;
+  }
 
   .buttons span {
     padding: 10px 15px;
   }
   .card.launch {
+    width: 100%;
+    margin-top: -1rem;
+  }
+  .cards {
     width: 100%;
   }
 }
