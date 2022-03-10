@@ -62,7 +62,12 @@ header i {
 .card.dark {
   background-color: #101010;
 }
-
+.card video {
+  border-radius: 10px 10px 0 0;
+}
+.card.card.launch video {
+  border-radius: 0;
+}
 .card .fa-angle-down {
   display: none;
   position: absolute;
