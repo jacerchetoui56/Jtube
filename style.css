@@ -253,7 +253,7 @@ footer h3 {
   transform: scale(1);
 }
 .searchbar input {
-  margin: 1rem 2rem 1rem 0;
+  margin: 1rem 3rem 1rem 0;
   border: solid 1px #a9a9a9;
   border-radius: 15px;
   padding: 13px 8px;
@@ -264,7 +264,7 @@ footer h3 {
 .searchbar input:focus {
   border: solid 2px #726f6f;
   text-align: start;
-  width: 10rem;
+  width: 9rem;
 }
 .noresult {
   display: none;
