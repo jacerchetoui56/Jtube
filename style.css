@@ -266,6 +266,14 @@ footer h3 {
   text-align: start;
   width: 10rem;
 }
+.noresult {
+  display: none;
+  text-align: center;
+  width: fit-content;
+  min-height: 90vh;
+  margin: 10rem;
+  font-size: 1rem;
+}
 .noresult.dark {
   color: white;
 }
