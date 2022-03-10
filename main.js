@@ -136,6 +136,7 @@ searchbar.addEventListener("keydown",(event)=>{
 const darkmode = document.querySelector(".darkmode")
 const lightmode= document.querySelector(".lightmode")
 const header = document.querySelector('header')
+console.log(lightmode)
 darkmode.addEventListener('click',()=>{
     header.classList.toggle("dark")
     document.body.classList.toggle("dark")
@@ -144,11 +145,14 @@ darkmode.addEventListener('click',()=>{
     noresult.classList.toggle('dark')
     sharebox.classList.toggle('dark')
 })
-lightmode.addEventListener('click',()=>{
-    header.classList.toggle("dark")
-    document.body.classList.toggle("dark")
-    card.forEach((onecard)=>{onecard.classList.toggle("dark")})
-    document.querySelector("footer").classList.toggle("dark")
-    sharebox.classList.toggle('dark')
-    noresult.classList.toggle('dark')
+
+
+//!to top button ----------
+window.onscroll = ()=>{
+    if(document.documentElement.scrollTop > 900) totopbtn.classList.add('show')
+    else totopbtn.classList.remove('show')
+}
+const totopbtn = document.querySelector(".totopbtn")
+totopbtn.addEventListener('click',()=>{
+    window.scrollTo({top:0, behavior : "smooth"})
 })

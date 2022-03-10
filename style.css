@@ -258,10 +258,11 @@ footer h3 {
   transform: scale(1);
 }
 .searchbar input {
+  font-size: 1.2rem;
   margin: 1rem 3rem 1rem 0;
   border: solid 1px #a9a9a9;
   border-radius: 15px;
-  padding: 13px 8px;
+  padding: 10px 8px;
   width: 5rem;
   text-align: center;
   transition: 0.4s ease-out;
@@ -300,6 +301,26 @@ footer h3 {
 .darkmode:hover,
 .lightmode:hover {
   cursor: pointer;
+}
+
+.totopbtn {
+  position: fixed;
+  font-size: 25px;
+  z-index: 2;
+  bottom: 10%;
+  right: -3rem;
+  background-color: #ff4444;
+  box-shadow: 0 0 8px -2px black;
+  transition: 0.5s ease;
+  padding: 10px 12px;
+  border-radius: 50%;
+}
+.totopbtn:hover {
+  cursor: pointer;
+  background-color: #d80404;
+}
+.totopbtn.show {
+  right: 2rem;
 }
 
 /* !media queries --------------------------------*/
