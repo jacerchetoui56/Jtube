@@ -132,8 +132,6 @@ searchbar.addEventListener("keydown",(event)=>{
     }
 })
 
-if(searchbar == document.activeElement) searchbar.classList.toggle("focused")
-
 //!toggling dark mode-------------
 const darkmode = document.querySelector(".darkmode")
 const lightmode= document.querySelector(".lightmode")
@@ -153,6 +151,4 @@ lightmode.addEventListener('click',()=>{
     document.querySelector("footer").classList.add("dark")
     sharebox.classList.toggle('dark')
     noresult.classList.toggle('dark')
-
-   
 })
