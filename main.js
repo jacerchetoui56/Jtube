@@ -75,15 +75,15 @@ function pauseOthers(n){
 for(let i=0;i<exitvideo.length;i++){
     exitvideo[i].addEventListener('click',(event)=>{
         event.stopImmediatePropagation()
-    card[i].classList.remove('launch')
-    cancelHover() 
-    video[i].pause()
-    video[i].currentTime = 0
-    exitvideo[i].style.display = 'none'
-    video[i].autoplay = ""
-    video[i].muted = "muted"
-    video[i].controls = ""
-    verifyHover()
+        card[i].classList.remove('launch')
+        cancelHover() 
+        video[i].pause()
+        video[i].currentTime = 0
+        exitvideo[i].style.display = 'none'
+        video[i].autoplay = ""
+        video[i].muted = "muted"
+        video[i].controls = ""
+        verifyHover()
     })
 }
 
@@ -101,3 +101,58 @@ function verifyHover(){
 }
 
 
+const searchbar = document.querySelector(".searchbar input")
+const titles = document.querySelectorAll(".text h2")
+const noresult = document.querySelector(".noresult")
+
+searchbar.addEventListener("keydown",(event)=>{
+    pauseOthers()
+    let no=0
+    let text = searchbar.value.toLowerCase()
+    const key = event.key
+    if(text.length==0 && key <='z' && key >='a') text = key
+    else if(key <='z' && key >='a' && text.length!=0) text+=key
+    for(let i=0;i<card.length;i++){
+        if(!titles[i].textContent.toLowerCase().includes(text)) {
+            card[i].style.display = 'none';
+             no++; 
+        }
+    }
+    if(no==card.length) noresult.style.display = 'block'
+    if(event.key == "Backspace") 
+    {
+        text = text.slice(0,-1)        
+        for(i=0;i<card.length;i++){
+        if(!titles[i].textContent.toLowerCase().includes(text) ) card[i].style.display = 'none';
+         else{ card[i].style.display = 'block'; noresult.style.display = 'none'}
+    }
+}
+    if(text.length ==1 || text.length <=1) for(let i=0;i<card.length;i++){
+         card[i].style.display = 'block'
+    }
+})
+
+if(searchbar == document.activeElement) searchbar.classList.toggle("focused")
+
+//!toggling dark mode-------------
+const darkmode = document.querySelector(".darkmode")
+const lightmode= document.querySelector(".lightmode")
+const header = document.querySelector('header')
+darkmode.addEventListener('click',()=>{
+    header.classList.toggle("dark")
+    document.body.classList.toggle("dark")
+    card.forEach((onecard)=>{onecard.classList.toggle("dark")})
+    document.querySelector("footer").classList.add("dark")
+    noresult.classList.toggle('dark')
+    sharebox.classList.toggle('dark')
+})
+lightmode.addEventListener('click',()=>{
+    header.classList.toggle("dark")
+    document.body.classList.toggle("dark")
+    card.forEach((onecard)=>{onecard.classList.toggle("dark")})
+    document.querySelector("footer").classList.add("dark")
+    sharebox.classList.toggle('dark')
+    noresult.classList.toggle('dark')
+
+   
+})
