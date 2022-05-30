@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
+/* body {
   background-image: linear-gradient(to right, #e1e1e5, #c7c7c7);
-}
+} */
 body.dark {
   background-image: linear-gradient(to right, #2a2a2b, #242323);
 }
@@ -13,7 +14,6 @@ body.dark {
 header {
   background-image: linear-gradient(to right, #f91a1a, transparent);
   min-height: 10vh;
-  background-color: rgb(231, 231, 231);
   padding-left: 2rem;
   display: flex;
   align-items: center;
@@ -27,6 +27,8 @@ header.dark {
 }
 .Logo {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 .logo {
   font-size: 2.5rem;
@@ -52,9 +54,9 @@ header i {
 .card {
   margin: 2rem auto;
   width: 15rem;
-  border: solid 1px grey;
+  /* border: solid 1px grey; */
   border-radius: 10px;
-  box-shadow: 0 0 5px -2px #0e0e0e;
+  box-shadow: 0 0 10px -3px #0e0e0e;
   transition: 0.5s ease;
   background-color: white;
   position: relative;
@@ -154,13 +156,16 @@ footer.dark {
   color: white;
 }
 footer h2 {
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   flex-grow: 1;
   flex-basis: 20rem;
 }
 footer h3 {
   text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   letter-spacing: 1px;
   flex-grow: 1;
   flex-basis: 20rem;
@@ -180,7 +185,7 @@ footer h3 {
   box-shadow: 0 0 2px 1px #6e6e6e;
 }
 .share.dark {
-  background-image: linear-gradient(to bottom right, #d7d7d7, #1c1c1c);
+  background-color: #d7d7d7;
 }
 .share h1 {
   margin-bottom: 1rem;
@@ -229,7 +234,7 @@ footer h3 {
   color: white;
 }
 .share.dark .sharebtn {
-  background-color: #1877f2;
+  background-color: rgb(80 156 255);
 }
 .share .sharebtn:hover {
   cursor: pointer;
@@ -261,7 +266,7 @@ footer h3 {
   font-size: 1.2rem;
   margin: 1rem 3rem 1rem 0;
   border: solid 1px #a9a9a9;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 10px 8px;
   width: 5rem;
   text-align: center;
@@ -269,6 +274,7 @@ footer h3 {
 }
 .searchbar input:focus {
   border: solid 2px #726f6f;
+  outline: none;
   text-align: start;
   width: 9rem;
 }
@@ -311,13 +317,13 @@ footer h3 {
   right: -3rem;
   background-color: #ff4444;
   box-shadow: 0 0 8px -2px black;
-  transition: 0.5s ease;
-  padding: 10px 12px;
+  cursor: pointer;
+  padding: 10px 13px;
   border-radius: 50%;
+  opacity: 0.75;
 }
 .totopbtn:hover {
-  cursor: pointer;
-  background-color: #d80404;
+  opacity: 0.9;
 }
 .totopbtn.show {
   right: 2rem;
@@ -345,6 +351,9 @@ footer h3 {
   }
 }
 @media (max-width: 585px) {
+  header {
+    padding-left: 0;
+  }
   .card {
     margin: 0 auto 1.5rem;
     width: 85%;
